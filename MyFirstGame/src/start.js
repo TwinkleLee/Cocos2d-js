@@ -1,16 +1,19 @@
 var StartLayer = cc.Layer.extend({
+  bgSprite:null,
+	scoreLabel:null,
   ctor: function () {
+		// 1. super init first
     this._super();
+
     var size = cc.winSize;
 
-
+		// add bg
     this.bgSprite = new cc.Sprite(res.BackGround_png);
     this.bgSprite.attr({
       x: size.width / 2,
       y: size.height / 2,
     });
     this.addChild(this.bgSprite, 0);
-
 
     return true;
   }
@@ -26,7 +29,6 @@ var StartLayer2 = cc.Layer.extend({
     helloLabel.y = size.height * 4 / 5;
     helloLabel.anchorX = 0.5;
     this.addChild(helloLabel);
-
 
     //add start menu
     var startItem = new cc.MenuItemImage(
