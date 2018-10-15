@@ -47,14 +47,14 @@
  *
  */
 
-cc.game.onStart = function(){
+cc.game.onStart = function(){//入口函数
     cc.view.adjustViewPort(true);
     // cc.view.setDesignResolutionSize(800, 450, cc.ResolutionPolicy.SHOW_ALL);
     cc.view.setDesignResolutionSize(320, 568, cc.ResolutionPolicy.FIXED_WIDTH);
     
     cc.view.resizeWithBrowserSize(true);
     //load resources
-    cc.LoaderScene.preload(g_resources, function () {
+    cc.LoaderScene.preload(g_resources, function () {//对资源预加载,并在回调中进入首个场景
         // cc.director.runScene(new HelloWorldScene());
         cc.director.runScene(new StartScene());
     }, this);
